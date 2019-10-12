@@ -1,0 +1,18 @@
+{
+  "name": "django-rest-angular-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for Django Rest API and Angular App",
+  "scripts": {
+    "postinstall": "npm install --prefix theme-customization"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlyohreally/django-rest-api-angular-boilerplate.git"
+  },
+  "author": "Orly Knop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orlyohreally/django-rest-api-angular-boilerplate/issues"
+  },
+  "homepage": "https://github.com/orlyohreally/django-rest-api-angular-boilerplate#readme"
+}
