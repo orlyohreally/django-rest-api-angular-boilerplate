@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %} {% load staticfiles %} {% block content %}
+<app-root></app-root>
+
+<script
+  type="text/javascript"
+  src="{% static '/blog/runtime-es5.js' %}"
+></script>
+<script
+  type="text/javascript"
+  src="{% static '/blog/polyfills-es5.js' %}"
+></script>
+<script type="text/javascript" src="{% static '/blog/main-es5.js' %}"></script>
+
+{% endblock %}
