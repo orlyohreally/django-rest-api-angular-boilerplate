@@ -76,7 +76,12 @@ Update postinstall command in package.json file for the boilerplate
 Update build path depending on Angular version
 * .angular-cli.json ```"outDir": "../restApiApp/static/blog/"```
 * angular.json - ```"outputPath": "../restApiApp/static/blog/"```
-  
+
+Update deployUrl to make lazy loaded chunks be loaded from static files
+```
+"deployUrl": "/static/blog/",
+```
+
 Add postinstall script to package.json file
 ```
 "postinstall": "ng build --prod --output-hashing none"
