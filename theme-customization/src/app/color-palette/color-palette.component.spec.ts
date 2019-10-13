@@ -1,6 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ColorPaletteComponent } from './color-palette.component';
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-color-palette-card',
+  template: ''
+})
+export class ColorPaletteCardComponentMock {
+  @Input() title: string;
+  @Input() color: string;
+  @Input() classes: string[];
+}
 
 describe('ColorPaletteComponent', () => {
   let component: ColorPaletteComponent;
@@ -8,9 +18,8 @@ describe('ColorPaletteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ColorPaletteComponent ]
-    })
-    .compileComponents();
+      declarations: [ColorPaletteComponent, ColorPaletteCardComponentMock]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

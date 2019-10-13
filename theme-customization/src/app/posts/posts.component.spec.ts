@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ColorPaletteCardComponent } from './color-palette-card.component';
+import { PostsComponent } from './posts.component';
 import { MatCardModule } from '@angular/material/card';
 
-describe('ColorPaletteCardComponent', () => {
-  let component: ColorPaletteCardComponent;
-  let fixture: ComponentFixture<ColorPaletteCardComponent>;
+describe('PostsComponent', () => {
+  let component: PostsComponent;
+  let fixture: ComponentFixture<PostsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ColorPaletteCardComponent],
+      declarations: [PostsComponent],
       imports: [MatCardModule]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ColorPaletteCardComponent);
+    fixture = TestBed.createComponent(PostsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

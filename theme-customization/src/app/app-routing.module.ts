@@ -20,6 +20,12 @@ const routes: Routes = [
         data: { title: 'Typography' }
       },
       {
+        path: 'posts',
+        loadChildren: () =>
+          import('./posts/posts.module').then(m => m.PostsModule),
+        data: { title: 'Posts' }
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: '/palettes'
