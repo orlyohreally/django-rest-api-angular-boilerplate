@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainNavigationComponent } from './main-navigation.component';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('MainNavigationComponent', () => {
   let component: MainNavigationComponent;
@@ -8,9 +10,9 @@ describe('MainNavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainNavigationComponent ]
-    })
-    .compileComponents();
+      declarations: [MainNavigationComponent],
+      imports: [MatListModule, MatIconModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

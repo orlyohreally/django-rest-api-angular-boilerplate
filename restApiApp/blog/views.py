@@ -1,7 +1,11 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer
+from rest_framework import viewsets, permissions
+from .serializers import UserSerializer, GroupSerializer, PostSerializer
 from django.shortcuts import render
+from .models import Post
+from .permissions import IsAuthorOrReadOnly
+from django.utils import timezone
+import datetime
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -18,6 +22,21 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows posts to be viewed or edited.
+    """
+    queryset = Post.objects.filter(
+        timestamp__lte=datetime.datetime.now(tz=timezone.utc))
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
+    permission_classes = (
+        permissions.IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly,)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 def index(request, path=''):
