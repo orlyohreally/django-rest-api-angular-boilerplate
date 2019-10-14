@@ -21,8 +21,7 @@ Activate created environment
 env/Scripts/activate
 
 # In VSCode (Windows)
-cd env/Scripts
-source activate
+source env/Scripts/activate
 ```
 
 Clone project
