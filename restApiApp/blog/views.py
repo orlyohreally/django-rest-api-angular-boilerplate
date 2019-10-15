@@ -29,7 +29,7 @@ class PostViewSet(viewsets.ModelViewSet):
     API endpoint that allows posts to be viewed or edited.
     """
     queryset = Post.objects.filter(
-        timestamp__lte=datetime.datetime.now(tz=timezone.utc))
+        timestamp__lte=datetime.datetime.now())
     serializer_class = PostSerializer
     lookup_field = 'slug'
     permission_classes = (

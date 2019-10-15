@@ -2,25 +2,34 @@
   <div class="mat-h1">
     This content has been lazy loaded
   </div>
-  <div class="mat-error text_centered" *ngIf="!(posts | async)">
-    Server error
-  </div>
-  <div class="post-list" *ngIf="(posts | async)?.results as postList">
-    <div *ngIf="!postList.length">
-      No posts
+
+  <ng-container *ngIf="errorMessage; else loading">
+    <div class="mat-error text_centered">
+      {{ errorMessage }}
     </div>
-    <mat-card class="post" *ngFor="let post of postList">
-      <mat-card-header>
-        <mat-card-title>{{ post.title }}</mat-card-title>
-        <mat-card-subtitle>
-          {{ post.user.username }}
-        </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          {{ post.content }}
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
+  </ng-container>
+  <ng-template #loading>
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!(posts | async)">
+      <mat-spinner [diameter]="45"></mat-spinner>
+    </div>
+
+    <div class="post-list" *ngIf="(posts | async)?.results as postList">
+      <div class="mat-error text_centered" *ngIf="!postList.length">
+        No posts
+      </div>
+      <mat-card class="post" *ngFor="let post of postList">
+        <mat-card-header>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+          <mat-card-subtitle>
+            {{ post.user.username }}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ post.content }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-template>
 </div>

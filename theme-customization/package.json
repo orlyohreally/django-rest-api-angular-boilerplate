@@ -48,5 +48,15 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https:/https://github.com/orlyohreally/theme-customization.git.git"
+  },
+  "author": "Orly Knop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https:/https://github.com/orlyohreally/theme-customization.git/issues"
+  },
+  "homepage": "https:/https://github.com/orlyohreally/theme-customization.git#readme"
 }
